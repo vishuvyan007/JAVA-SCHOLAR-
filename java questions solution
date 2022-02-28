@@ -1,4 +1,5 @@
-JAVA PROGRAM FOR BASIC CALCULATOR :
+1)
+##JAVA PROGRAM FOR BASIC CALCULATOR :
 
 import java.io.*;
 import java.lang.*;
@@ -71,3 +72,282 @@ public class BasicCalculator {
                            + " = " + o);
     }
 }
+
+****************************************************************************************************************************************************************************
+2)
+##JAVA Program for fibonacci series
+
+import java.util.*;
+ 
+public class Fibboseries {
+ 
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+        int first = 0;
+        int second = 1;
+        
+        Scanner in = new Scanner(System.in);
+        
+        System.out.println("How many elements you want to print in a Fibonacci series");
+        int n = in.nextInt();
+        
+        System.out.println("Fibonacci series");
+        System.out.print(first + " "+ second + " ");
+        
+        int next;
+ 
+        /*First two elements of a Fibonacci series is 0 and 1,
+          so we started a loop from index 2
+        */
+        for(int i = 2; i < n; i++) {
+            //next number is the sum of previous two numbers
+            next = first + second;
+            
+            System.out.print(next + " ");
+            
+            //previous two numbers assignment
+            first = second;
+            second = next;
+        }
+        
+    }
+    
+}
+
+****************************************************************************************************************************************************************************
+3)
+##JAVA Program for finding factorial of a number
+
+import java.math.BigInteger;
+
+public class FactNum {
+
+    public static void main(String[] args) {
+
+        int num = 30;
+        BigInteger factorial = BigInteger.ONE;
+        for(int i = 1; i <= num; ++i)
+        {
+            
+            factorial = factorial.multiply(BigInteger.valueOf(i));
+        }
+        System.out.printf("Factorial of %d = %d", num, factorial);
+    }
+}
+
+****************************************************************************************************************************************************************************
+4)
+##JAVA Program to find whether the given string is Palindrome or not
+
+public class PalCheck
+{
+    public static void main(String args[])
+    {
+        String a, b = "";
+        Scanner s = new Scanner(System.in);
+        System.out.print("Enter the string you want to check:");
+        a = s.nextLine();
+        int n = a.length();
+        for(int i = n - 1; i >= 0; i--)
+        {
+            b = b + a.charAt(i);
+        }
+        if(a.equalsIgnoreCase(b))
+        {
+            System.out.println("The string is palindrome.");
+        }
+        else
+        {
+            System.out.println("The string is not palindrome.");
+        }
+    }
+}
+
+***************************************************************************************************************************************************************************
+5)
+##JAVA Program tor calculating Permutation and combination of 2 number
+
+import java.util.Scanner;
+ 
+public class PercombMain
+{
+    public static int fact(int num){
+        int fact=1, i;
+        for(i=1; i<=num; i++){
+            fact = fact*i;
+        }
+        return fact;
+    }
+    public static void main(String args[]){
+        int n, r;
+        Scanner scanner = new Scanner(System.in);
+ 
+        System.out.print("Enter Value of n : ");
+        n = scanner.nextInt();
+        System.out.print("Enter Value of r : ");
+        r = scanner.nextInt();
+ 
+        System.out.print("NCR is " +(fact(n)/(fact(n-r)*fact(r))));
+        System.out.print("\nNPR is " +(fact(n)/(fact(n-r))));
+    }
+}
+
+******************************************************************************************************************************************************************************
+6)
+##Java Program for printing Diamond pattern
+
+import java.util.Scanner;
+public class Diamond
+{
+    public static void main(String args[]) 
+    {
+        int n, i, j, space = 1;
+        System.out.print("Enter the number of rows: ");
+        Scanner s = new Scanner(System.in);
+        n = s.nextInt();
+        space = n - 1;
+        for (j = 1; j <= n; j++) 
+        {
+            for (i = 1; i <= space; i++) 
+            {
+                System.out.print(" ");
+            }
+            space--;
+            for (i = 1; i <= 2 * j - 1; i++) 
+            {
+                System.out.print("*");                
+            }
+            System.out.println("");
+            }
+        space = 1;
+        for (j = 1; j <= n - 1; j++) 
+        {
+            for (i = 1; i <= space; i++) 
+            {
+                System.out.print(" ");
+            }
+            space++;
+            for (i = 1; i <= 2 * (n - j) - 1; i++) 
+            {
+                System.out.print("*");
+            }
+            System.out.println("");
+        }
+    }
+}
+
+*****************************************************************************************************************************************************************************
+7)
+##JAVA Program to reverse the letters present in String
+
+import java.io.*;
+import java.util.Scanner;
+ 
+class ReverStr{
+    public static void main (String[] args) {
+       
+        String str= "THATHASTU", nstr="";
+        char ch;
+       
+      System.out.print("Original word: ");
+      System.out.println("THATHASTU"); 
+       
+      for (int i=0; i<str.length(); i++)
+      {
+        ch= str.charAt(i); 
+        nstr= ch+nstr; 
+      }
+      System.out.println("Reversed word: "+ nstr);
+    }
+}
+
+*****************************************************************************************************************************************************************************
+8)
+##JAVA Program to check ehether the given array is mirror reversed or not
+
+public class MirrInv{
+
+	static boolean isMirrorInverse(int arr[])
+	{
+		for (int i = 0; i < arr.length; i++) {
+
+          if (arr[arr[i]] != i)
+				return false;
+		}
+
+		return true;
+	}
+
+	public static void main(String[] args)
+  {
+		int arr[] = { 1, 2, 3, 0 };
+		if (isMirrorInverse(arr))
+			System.out.println("Yes");
+		else
+			System.out.println("No");
+	}
+}
+
+****************************************************************************************************************************************************************************
+9)
+#JAVA program to remove elements from an ArrayList
+
+import java.util.ArrayList;
+
+class ArrRem {
+  public static void main(String[] args) {
+    
+    ArrayList<Integer> primeNumbers = new ArrayList<>();
+    primeNumbers.add(2);
+    primeNumbers.add(3);
+    primeNumbers.add(5);
+    System.out.println("ArrayList: " + primeNumbers);
+
+    // remove element at index 2
+    int removedElement = primeNumbers.remove(2);
+
+    System.out.println("Removed Element: " + removedElement);
+  }
+}
+
+*****************************************************************************************************************************************************************************
+10)
+## JAVA Program to find the Transpose of a given Matrix.
+
+public class Transpose {
+
+    public static void main(String[] args) {
+        int row = 2, column = 3;
+        int[][] matrix = { {2, 3, 4}, {5, 6, 4} };
+
+        // Display current matrix
+        display(matrix);
+
+        // Transpose the matrix
+        int[][] transpose = new int[column][row];
+        for(int i = 0; i < row; i++) {
+            for (int j = 0; j < column; j++) {
+                transpose[j][i] = matrix[i][j];
+            }
+        }
+        display(transpose);
+    }
+
+    public static void display(int[][] matrix) {
+        System.out.println("The matrix is: ");
+        for(int[] row : matrix) {
+            for (int column : row) {
+                System.out.print(column + "    ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+
+ 
+ 
