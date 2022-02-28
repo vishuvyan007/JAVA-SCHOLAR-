@@ -81,9 +81,7 @@ import java.util.*;
  
 public class Fibboseries {
  
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String[] args) {
         
         int first = 0;
@@ -98,10 +96,7 @@ public class Fibboseries {
         System.out.print(first + " "+ second + " ");
         
         int next;
- 
-        /*First two elements of a Fibonacci series is 0 and 1,
-          so we started a loop from index 2
-        */
+	
         for(int i = 2; i < n; i++) {
             //next number is the sum of previous two numbers
             next = first + second;
@@ -323,10 +318,8 @@ public class Transpose {
         int row = 2, column = 3;
         int[][] matrix = { {2, 3, 4}, {5, 6, 4} };
 
-        // Display current matrix
         display(matrix);
 
-        // Transpose the matrix
         int[][] transpose = new int[column][row];
         for(int i = 0; i < row; i++) {
             for (int j = 0; j < column; j++) {
